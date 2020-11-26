@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "jsx": "react",
+    "target": "es2019",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./built",
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitThis": true,
+    "types": ["@emotion/core"]
+  },
+  "exclude": ["node_modules_local"]
+}
