@@ -10,7 +10,7 @@
     "cjs/",
     "esm/",
     "src/",
-    "types/",
+    "types/vite-react-webcomponents.d.ts",
     "README.md"
   ],
   "scripts": {
@@ -20,7 +20,7 @@
     "build-web:wc": "cross-env WC=true vite build",
     "esm": "cross-env NODE_ENV=production rollup -c build/rollup.config.js -o esm/vite-react-webcomponents.js && npm run esm:index && npm run dts",
     "esm:index": "babel src/components/entry/index.tsx -o esm/index.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/.babelrc\"",
-    "dts": "rollup -c build/rollup.config.dts.js -o esm/vite-react-webcomponents.d.ts",
+    "dts": "rollup -c build/rollup.config.dts.js -o types/vite-react-webcomponents.d.ts",
     "style": "rollup -c build/rollup.config.style.js -o style/useless.js"
   },
   "dependencies": {

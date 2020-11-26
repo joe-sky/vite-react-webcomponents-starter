@@ -1,33 +1,43 @@
-/** @jsx jsx */
-import React, { useState } from 'react';
-import { jsx, css } from '@emotion/core';
+import React, { useState, ReactNode, Fragment } from 'react';
 import styled from '@emotion/styled';
 import logo from '../assets/images/logo.svg';
 import { Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 
-function AppHeader() {
+export interface ViteReactWebcomponentsProps {
+  title?: ReactNode;
+  content?: ReactNode;
+}
+
+const ViteReactWebcomponents: React.FC<ViteReactWebcomponentsProps> = props => {
   const [count, setCount] = useState(0);
 
   return (
     <Header>
       <img src={logo} className="App-logo" alt="logo" />
-      <p>Hello Vite + React!</p>
+      <p>{props.title}</p>
       <p>
         <Button size="large" onClick={() => setCount(count => count + 1)}>
           count is: {count}
           <PlusOutlined />
         </Button>
       </p>
-      <p>
-        Edit <code>App.jsx</code> and save to test HMR updates.
-      </p>
+      <p>{props.content}</p>
       <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </a>
     </Header>
   );
-}
+};
+
+ViteReactWebcomponents.defaultProps = {
+  title: 'Hello Vite + React!',
+  content: (
+    <>
+      Edit <code>App.tsx</code> and save to test HMR updates.
+    </>
+  )
+};
 
 const Header = styled.header`
   background-color: #282c34;
@@ -69,4 +79,4 @@ const Header = styled.header`
   }
 `;
 
-export default AppHeader;
+export default ViteReactWebcomponents;

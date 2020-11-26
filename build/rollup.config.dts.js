@@ -1,8 +1,8 @@
 import dts from 'rollup-plugin-dts';
 import license from 'rollup-plugin-license';
 import alias from '@rollup/plugin-alias';
-import { nodeResolve } from '@rollup/plugin-node-resolve';
 import ignoreImport from 'rollup-plugin-ignore-import';
+// import { nodeResolve } from '@rollup/plugin-node-resolve';
 
 const config = {
   input: './src/components/entry/dts.ts',

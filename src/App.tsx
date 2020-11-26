@@ -1,11 +1,18 @@
 import React from 'react';
-import AppHeader from './components/AppHeader';
+import ViteReactWebcomponents from './components/ViteReactWebcomponents';
 import './styles/app.less';
 
 function App() {
   return (
     <div className="App">
-      <AppHeader />
+      <ViteReactWebcomponents
+        title="Hello Vite + React + Web Components!"
+        content={
+          <>
+            Edit <code>tsx files</code> and save to test HMR updates.
+          </>
+        }
+      />
     </div>
   );
 }
