@@ -5,3 +5,4 @@ dist
 cjs
 esm
 style
+types/vite-react-webcomponents.d.ts
