@@ -13,7 +13,7 @@ function renderApp() {
 }
 
 const asyncLoadModules: Promise<any>[] = [];
-if (import.meta.env.MODE === 'development' && !__USE_WC) {
+if (import.meta.env.MODE === 'development') {
   asyncLoadModules.push(import('antd/dist/antd.less'));
 }
 

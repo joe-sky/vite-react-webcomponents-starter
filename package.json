@@ -1,35 +1,32 @@
 {
-  "name": "vite-react-webcomponents",
-  "version": "0.1.0",
+  "name": "vite-react-webcomponents-starter",
+  "version": "1.0.0",
+  "private": true,
   "description": "The vite starter for create react components with web components shell.",
-  "main": "cjs/index.js",
-  "module": "esm/index.js",
-  "types": "types/vite-react-webcomponents.d.ts",
-  "author": "Joe_Sky <hitomi_doax@sina.com>",
-  "files": [
-    "cjs/",
-    "esm/",
-    "src/",
-    "types/vite-react-webcomponents.d.ts",
-    "README.md"
-  ],
+  "author": "Joe_Sky",
+  "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "dev:wc": "cross-env WC=true vite",
-    "build-web": "vite build",
-    "build-web:wc": "cross-env WC=true vite build",
-    "esm": "cross-env NODE_ENV=production rollup -c build/rollup.config.js -o esm/vite-react-webcomponents.js && npm run esm:index && npm run dts",
-    "esm:index": "babel src/components/entry/index.tsx -o esm/index.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/.babelrc\"",
-    "dts": "rollup -c build/rollup.config.dts.js -o types/vite-react-webcomponents.d.ts",
+    "build": "npm run cjs && npm run esm && npm run dts && npm run style",
+    "build:web": "cross-env NODE_ENV=production vite build",
+    "cjs": "cross-env NODE_ENV=production FORMAT=cjs rollup -c build/rollup.config.js -o package/cjs/vite-react-webcomponents.js && npm run cjs:index && npm run cjs:vue",
+    "cjs:index": "babel src/components/entry/index.tsx -o package/cjs/index.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/cjs.babelrc\"",
+    "cjs:vue": "babel src/components/entry/vue.ts -o package/cjs/vue.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/cjs.babelrc\"",
+    "esm": "cross-env NODE_ENV=production FORMAT=es rollup -c build/rollup.config.js -o package/es/vite-react-webcomponents.js && npm run esm:index && npm run esm:vue",
+    "esm:index": "babel src/components/entry/index.tsx -o package/es/index.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/es.babelrc\"",
+    "esm:vue": "babel src/components/entry/vue.ts -o package/es/vue.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/es.babelrc\"",
+    "dts": "rollup -c build/rollup.config.dts.js -o package/types/index.d.ts",
     "style": "rollup -c build/rollup.config.style.js -o style/useless.js"
   },
   "dependencies": {
-    "@emotion/cache": "^10.0.29",
-    "@emotion/core": "^10.0.35",
-    "@emotion/styled": "^10.0.27",
-    "@pika/react": "file:./node_modules_local/react",
-    "@pika/react-dom": "file:./node_modules_local/react-dom",
-    "antd": "^4.6.3"
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "antd": "^4.15.4",
+    "mobx": "^6.0.4",
+    "mobx-react-lite": "^3.1.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
@@ -41,6 +38,8 @@
     "@babel/preset-typescript": "^7.10.4",
     "@rollup/plugin-alias": "^3.1.1",
     "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-image": "^2.0.5",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^9.0.0",
     "@rollup/plugin-replace": "^2.3.3",
@@ -50,7 +49,7 @@
     "@types/react-dom": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.2.0",
     "@typescript-eslint/parser": "^4.2.0",
-    "@vue/runtime-dom": "file:./node_modules_local/@vue/runtime-dom",
+    "@vitejs/plugin-react-refresh": "^1.1.0",
     "babel-plugin-import": "^1.13.1",
     "cross-env": "^7.0.2",
     "eslint": "^7.9.0",
@@ -71,7 +70,6 @@
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-processor-styled-components": "^1.10.0",
     "typescript": "^4.0.3",
-    "vite": "^1.0.0-rc.13",
-    "vite-plugin-react": "^3.0.0"
+    "vite": "^2.2.4"
   }
 }

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "jsx": "react",
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
     "target": "es2019",
     "module": "esnext",
     "moduleResolution": "node",
@@ -10,8 +11,6 @@
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "noImplicitThis": true,
-    "types": ["@emotion/core"]
-  },
-  "exclude": ["node_modules_local"]
+    "noImplicitThis": true
+  }
 }

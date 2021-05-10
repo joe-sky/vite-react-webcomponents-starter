@@ -1,25 +1,30 @@
-import reactPlugin from 'vite-plugin-react';
+import { defineConfig } from 'vite';
+import reactRefresh from '@vitejs/plugin-react-refresh';
+import babel from '@rollup/plugin-babel';
+import babelConfig from './build/babel.config';
 
-const useWc = process.env.WC;
-const REPLACE_VARS: Record<string, any> = {
-  __USE_WC: !!useWc
-};
+const env = process.env.NODE_ENV;
+const isProduction = env === 'production';
 
-/**
- * @type { import('vite').UserConfig }
- */
-const config = {
-  jsx: 'react',
-  plugins: [reactPlugin],
-  cssPreprocessOptions: {
-    less: {
-      javascriptEnabled: true
+// https://vitejs.dev/config/
+export default defineConfig({
+  plugins: [reactRefresh()],
+  define: {
+    'process.env.NODE_ENV': JSON.stringify(env)
+  },
+  build: {
+    rollupOptions: {
+      plugins: [isProduction && babel(babelConfig())]
     }
   },
-  define: REPLACE_VARS,
+  css: {
+    preprocessorOptions: {
+      less: {
+        javascriptEnabled: true
+      }
+    }
+  },
   optimizeDeps: {
-    include: ['lodash', 'insert-css', '@ant-design/icons', '@ant-design/colors', 'classnames']
+    include: ['lodash', 'lodash/isObject', 'lodash/isEqual', '@ant-design/icons', '@ant-design/colors', 'classnames']
   }
-};
-
-export default config;
+});

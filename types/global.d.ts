@@ -1,9 +1,8 @@
-declare module '*.m.less' {
-  const classes: { [key: string]: string };
-  export default classes;
+import 'react';
+
+declare module 'react' {
+  interface StyleHTMLAttributes<T> extends React.HTMLAttributes<T> {
+    jsx?: boolean;
+    global?: boolean;
+  }
 }
-declare module '*.less';
-declare module '*.scss';
-declare module '*.css';
-declare module '*.svg';
-declare const __USE_WC: boolean;

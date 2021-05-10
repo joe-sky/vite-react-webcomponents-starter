@@ -1,25 +1,31 @@
-import React, { useState, ReactNode, Fragment } from 'react';
+import React, { useState, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import logo from '../assets/images/logo.svg';
 import { Button } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
+import { observer } from 'mobx-react-lite';
+import { useStore } from '../stores';
 
 export interface ViteReactWebcomponentsProps {
-  title?: ReactNode;
+  titleText?: ReactNode;
   content?: ReactNode;
+  height?: number | string;
+  userName?: string;
 }
 
-const ViteReactWebcomponents: React.FC<ViteReactWebcomponentsProps> = props => {
+const ViteReactWebcomponents = observer<ViteReactWebcomponentsProps>(props => {
   const [count, setCount] = useState(0);
+  const { common } = useStore();
 
   return (
-    <Header>
+    <Header height={props.height}>
       <img src={logo} className="App-logo" alt="logo" />
-      <p>{props.title}</p>
+      <p>
+        Hi {props.userName || common.userInfo.name}, welcome to {props.titleText}
+      </p>
       <p>
         <Button size="large" onClick={() => setCount(count => count + 1)}>
-          count is: {count}
-          <PlusOutlined />
+          count is: {count} <PlusOutlined />
         </Button>
       </p>
       <p>{props.content}</p>
@@ -28,20 +34,22 @@ const ViteReactWebcomponents: React.FC<ViteReactWebcomponentsProps> = props => {
       </a>
     </Header>
   );
-};
+});
 
 ViteReactWebcomponents.defaultProps = {
-  title: 'Hello Vite + React!',
+  titleText: 'Vite + React!',
   content: (
     <>
       Edit <code>App.tsx</code> and save to test HMR updates.
     </>
-  )
+  ),
+  height: '100vh',
+  userName: ''
 };
 
-const Header = styled.header`
+const Header = styled.header<Pick<ViteReactWebcomponentsProps, 'height'>>`
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: ${props => (props.height != null ? props.height : '100vh')};
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -15,16 +15,16 @@ const config = {
       // Optional: replace body for ignored files. Default value is "export default undefined;"
       body: 'export default undefined;'
     }),
-    alias({
-      entries: [
-        { find: '@pika/react', replacement: 'react' },
-        { find: '@pika/react-dom', replacement: 'react-dom' }
-      ]
-    }),
+    // alias({
+    //   entries: [
+    //     { find: '@pika/react', replacement: 'react' },
+    //     { find: '@pika/react-dom', replacement: 'react-dom' }
+    //   ]
+    // }),
     dts(),
     license({
       banner: `/*!
- * vite-react-webcomponents v${require('../package.json').version}
+ * @joe-sky/vite-react-webcomponents v${require('../package/package.json').version}
  * (c) Joe_Sky
  */`
     })

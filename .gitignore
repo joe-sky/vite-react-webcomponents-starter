@@ -1,8 +1,11 @@
 node_modules
 .DS_Store
-dist
+/dist
 *.local
-cjs
-esm
-style
-types/vite-react-webcomponents.d.ts
+package/cjs
+package/es
+package/types
+/package/vue
+/build/packages-analyze.txt
+/style/useless.js
+/style/vite-react-webcomponents.css
