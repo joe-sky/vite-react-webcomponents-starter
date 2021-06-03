@@ -1,8 +1,10 @@
 import React from 'react';
 import { ReactWcElement } from './ReactWcElement';
 
-export function withReactWrapper<ElementType extends ReactWcElement, PropsType>(TagName: string) {
+export function withReactWrapper<ElementType extends ReactWcElement, PropsType>(TagName: any) {
   const ReactComponent: React.ForwardRefRenderFunction<{}, PropsType> = (props, ref) => {
+    const { children } = props;
+
     return (
       <TagName
         ref={(el: ElementType) => {
@@ -18,8 +20,9 @@ export function withReactWrapper<ElementType extends ReactWcElement, PropsType>(
               (ref as any).current = el;
             }
           }
-        }}
-      />
+        }}>
+        {children}
+      </TagName>
     );
   };
 

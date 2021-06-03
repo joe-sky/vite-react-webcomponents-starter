@@ -3,8 +3,6 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import isEqual from 'lodash/isEqual';
 
 export abstract class ReactWcElement extends HTMLElement {
-  public static observedAttributes: string[] = [];
-
   public connected = false;
 
   public rendering = false;

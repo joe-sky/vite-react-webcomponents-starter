@@ -1,6 +1,6 @@
 {
   "name": "@joe-sky/vite-react-webcomponents",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "The vite starter for create react components with web components shell.",
   "main": "cjs/index.js",
   "module": "es/index.js",

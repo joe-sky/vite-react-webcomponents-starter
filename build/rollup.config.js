@@ -8,6 +8,7 @@ import json from '@rollup/plugin-json';
 import { terser } from 'rollup-plugin-terser';
 import image from '@rollup/plugin-image';
 import replace from '@rollup/plugin-replace';
+import postcss from 'rollup-plugin-postcss';
 import analyze from 'rollup-plugin-analyzer';
 import fs from 'fs';
 import babelConfig from './babel.config';
@@ -22,10 +23,11 @@ const config = {
     // nodeResolve(),
     ignoreImport({
       // Ignore all .scss and .css file imports while building the bundle
-      extensions: ['.less', '.css'],
+      extensions: ['.less'],
       // Optional: replace body for ignored files. Default value is "export default undefined;"
       body: 'export default undefined;'
     }),
+    postcss({ minimize: true }),
     babel(babelConfig()),
     // alias({
     //   entries: [

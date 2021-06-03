@@ -9,7 +9,7 @@ import image from '@rollup/plugin-image';
 import babelConfig from './babel.config';
 
 const config = {
-  input: './src/components/entry/WcShell.tsx',
+  input: './src/components/ReactComponent.tsx',
   output: { format: 'es' },
   plugins: [
     babel(babelConfig(true)),
@@ -23,7 +23,7 @@ const config = {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.less', '.css']
     }),
     postcss({
-      extract: `vite-react-webcomponents.css`,
+      extract: `styles.css`,
       extensions: ['.css', '.less'],
       use: {
         less: {

@@ -1,12 +1,16 @@
 <template>
-  height:
-  <select v-model="height">
-    <option value="600px">600px</option>
-    <option value="800px">800px</option>
-  </select>
-  text:
-  <input v-model="titleText" />
-  <vite-react-webcomponents userName="Joe_Sky" :titleText="titleText" :height="height" />
+  <div>
+    height:
+    <select v-model="height">
+      <option value="600px">600px</option>
+      <option value="800px">800px</option>
+    </select>
+    text:
+    <input v-model="titleText" />
+    <vite-react-webcomponents userName="Joe_Sky" :titleText="titleText" :height="height">
+      Try modifying the textbox at the top
+    </vite-react-webcomponents>
+  </div>
 </template>
 
 <script>

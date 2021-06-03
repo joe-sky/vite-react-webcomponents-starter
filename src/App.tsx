@@ -13,7 +13,9 @@ function App() {
 
   return (
     <div className="App">
-      <ViteReactWebcomponents titleText={titleText} content={content} />
+      <ViteReactWebcomponents titleText={titleText} content={content}>
+        Try modifying the textbox at the bottom of screen
+      </ViteReactWebcomponents>
       <Input
         value={titleText}
         onChange={e => {

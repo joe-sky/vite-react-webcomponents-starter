@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Extracted style file from @joe-sky/vite-react-webcomponents",
   "files": [
-    "vite-react-webcomponents.css",
+    "styles.css",
     "README.md"
   ],
   "author": "Joe_Sky",

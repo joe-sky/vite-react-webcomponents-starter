@@ -1403,10 +1403,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@joe-sky/vite-react-webcomponents@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@joe-sky/vite-react-webcomponents/-/vite-react-webcomponents-0.0.4.tgz#d3245fc708f305b00dd4c27bc9a3b3de235d07e7"
-  integrity sha512-bUDMx8pC0CSYwTmU5V948AoTQybAm1vwtgWgGjH+NW+qVopDhO9e1c58UWuNiBhyZgSCNiD1phUO5gf6JztKgw==
+"@joe-sky/vite-react-webcomponents@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@joe-sky/vite-react-webcomponents/-/vite-react-webcomponents-0.0.5.tgz#a2ae4b07e132ce3ef0400b323469a8143dc89d53"
+  integrity sha512-1nPRp2F5V9gHqIzHiZoxDeoo3tlJB1U+MZ4h6pIpBffg8gXIWBg/pct2zuN6Xs2gPaTAxosdHIvNw3rsw7aw4g==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"

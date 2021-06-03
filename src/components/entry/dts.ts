@@ -1,1 +1,1 @@
-export { default, ViteReactWebcomponentsProps } from '../ViteReactWebcomponents';
+export { default, ReactComponentProps as ViteReactWebcomponentsProps } from '../ReactComponent';

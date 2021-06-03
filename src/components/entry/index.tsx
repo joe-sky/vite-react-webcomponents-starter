@@ -1,8 +1,10 @@
 import React from 'react';
 import WcShell from './vite-react-webcomponents.js';
 
-export function withReactWrapper<ElementType extends HTMLElement, PropsType>(TagName: string) {
+export function withReactWrapper<ElementType extends HTMLElement, PropsType>(TagName: any) {
   const ReactComponent: React.ForwardRefRenderFunction<{}, PropsType> = (props, ref) => {
+    const { children } = props;
+
     return (
       <TagName
         ref={(el: ElementType) => {
@@ -18,8 +20,9 @@ export function withReactWrapper<ElementType extends HTMLElement, PropsType>(Tag
               (ref as any).current = el;
             }
           }
-        }}
-      />
+        }}>
+        {children}
+      </TagName>
     );
   };
 

@@ -6,14 +6,14 @@ import { PlusOutlined } from '@ant-design/icons';
 import { observer } from 'mobx-react-lite';
 import { useStore } from '../stores';
 
-export interface ViteReactWebcomponentsProps {
+export interface ReactComponentProps {
   titleText?: ReactNode;
   content?: ReactNode;
   height?: number | string;
   userName?: string;
 }
 
-const ViteReactWebcomponents = observer<ViteReactWebcomponentsProps>(props => {
+const ReactComponent: React.FC<ReactComponentProps> = props => {
   const [count, setCount] = useState(0);
   const { common } = useStore();
 
@@ -32,11 +32,14 @@ const ViteReactWebcomponents = observer<ViteReactWebcomponentsProps>(props => {
       <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </a>
+      <Bottom>
+        <slot />
+      </Bottom>
     </Header>
   );
-});
+};
 
-ViteReactWebcomponents.defaultProps = {
+ReactComponent.defaultProps = {
   titleText: 'Vite + React!',
   content: (
     <>
@@ -47,7 +50,7 @@ ViteReactWebcomponents.defaultProps = {
   userName: ''
 };
 
-const Header = styled.header<Pick<ViteReactWebcomponentsProps, 'height'>>`
+const Header = styled.header<Pick<ReactComponentProps, 'height'>>`
   background-color: #282c34;
   min-height: ${props => (props.height != null ? props.height : '100vh')};
   display: flex;
@@ -87,4 +90,9 @@ const Header = styled.header<Pick<ViteReactWebcomponentsProps, 'height'>>`
   }
 `;
 
-export default ViteReactWebcomponents;
+const Bottom = styled.footer`
+  margin-top: 20px;
+  font-size: calc(4px + 2vmin);
+`;
+
+export default observer(ReactComponent);

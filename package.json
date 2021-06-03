@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "npm run cjs && npm run esm && npm run dts && npm run style",
+    "build": "npm run style && npm run cjs && npm run esm && npm run dts",
     "build:web": "cross-env NODE_ENV=production vite build",
     "cjs": "cross-env NODE_ENV=production FORMAT=cjs rollup -c build/rollup.config.js -o package/cjs/vite-react-webcomponents.js && npm run cjs:index && npm run cjs:vue",
     "cjs:index": "babel src/components/entry/index.tsx -o package/cjs/index.js --extensions \".js,.jsx,.ts,.tsx\" --config-file \"./build/cjs.babelrc\"",
