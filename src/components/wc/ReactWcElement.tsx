@@ -15,8 +15,6 @@ export abstract class ReactWcElement extends HTMLElement {
     this.shadowRoot.appendChild(this.rootNode);
   };
 
-  public styleContent: string;
-
   public data: any;
 
   public abstract render: () => ReactElement<any>;
@@ -51,7 +49,7 @@ export abstract class ReactWcElement extends HTMLElement {
   }
 
   public removeAttribute(name: string) {
-    (this.data as any)[name] = null;
+    this.data[name] = null;
     super.removeAttribute(name);
   }
 
