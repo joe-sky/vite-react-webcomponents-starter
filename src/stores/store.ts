@@ -1,5 +1,5 @@
 import { makeAutoObservable, observable, computed, toJS } from 'mobx';
-import CommonStore from './common.store';
+import CommonStore from './common';
 
 export class RootStore {
   common = new CommonStore();

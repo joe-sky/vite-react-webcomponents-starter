@@ -6,3 +6,11 @@ declare module 'react' {
     global?: boolean;
   }
 }
+
+declare global {
+  interface ImportMeta {
+    env: {
+      MODE: string;
+    };
+  }
+}

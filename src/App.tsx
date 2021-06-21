@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ViteReactWebcomponents from './components/DevWcShell';
 import './styles/app.less';
 import { Input } from 'antd';

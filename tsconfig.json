@@ -12,5 +12,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitThis": true
-  }
+  },
+  "include": ["src", "types"],
+  "exclude": ["src/components/entry/index.tsx", "src/components/entry/vue.ts"]
 }
