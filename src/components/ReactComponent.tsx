@@ -1,4 +1,4 @@
-import React, { useState, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import styled from '@emotion/styled';
 import logo from '../assets/images/logo.svg';
 import { Button } from 'antd';
@@ -15,18 +15,18 @@ export interface ReactComponentProps {
 }
 
 const ReactComponent = sfc<ReactComponentProps>()({
-  template: ({ data, styles: { Header, Bottom } }) => (
-    <Header height={data.props.height}>
+  template: ({ data, props, styles: { Header, Bottom } }) => (
+    <Header height={props.height}>
       <img src={logo} className="App-logo" alt="logo" />
       <p>
-        Hi {data.props.userName || data.common.userInfo.name}, welcome to {data.props.titleText}
+        Hi {props.userName || data.common.userInfo.name}, welcome to {props.titleText}
       </p>
       <p>
         <Button size="large" onClick={data.onClick}>
           count is: {data.count} <PlusOutlined />
         </Button>
       </p>
-      <p>{data.props.content}</p>
+      <p>{props.content}</p>
       <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
         Learn React
       </a>
@@ -36,12 +36,11 @@ const ReactComponent = sfc<ReactComponentProps>()({
     </Header>
   ),
 
-  Component(props) {
+  Component() {
     const [count, setCount] = useState(0);
     const { common } = useStore();
 
     return {
-      props,
       count,
       common,
       onClick() {

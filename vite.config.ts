@@ -3,13 +3,14 @@ import reactRefresh from '@vitejs/plugin-react-refresh';
 import babel from '@rollup/plugin-babel';
 import babelConfig from './build/babel.config';
 import jsxSfc from 'vite-plugin-jsx-sfc';
+import reactJsx from 'vite-react-jsx';
 
 const env = process.env.NODE_ENV;
 const isProduction = env === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [jsxSfc(), reactRefresh()],
+  plugins: [jsxSfc(), reactRefresh(), reactJsx()],
   define: {
     'process.env.NODE_ENV': JSON.stringify(env)
   },

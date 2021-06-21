@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactComponent, { ReactComponentProps } from '../ReactComponent';
 import { ReactWcElement } from '../wc/ReactWcElement';
 import { CacheProvider } from '@emotion/react';

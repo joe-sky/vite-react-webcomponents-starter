@@ -3,5 +3,5 @@
 ## Installation
 
 ```bash
-jnpm install @joe-sky/vite-react-webcomponents
+npm install @joe-sky/vite-react-webcomponents
 ```
