@@ -16,11 +16,10 @@ import babelConfig from './babel.config';
 const env = process.env.NODE_ENV;
 const format = process.env.FORMAT;
 const config = {
-  input: './src/components/entry/WcShell.tsx',
+  input: './src/components/wc/WcShell.tsx',
   output: { format },
   // external: ['react', 'react-dom'],
   plugins: [
-    // nodeResolve(),
     ignoreImport({
       // Ignore all .scss and .css file imports while building the bundle
       extensions: ['.less'],
@@ -29,12 +28,6 @@ const config = {
     }),
     postcss({ minimize: true }),
     babel(babelConfig()),
-    // alias({
-    //   entries: [
-    //     { find: 'react', replacement: '@pika/react' },
-    //     { find: 'react-dom', replacement: '@pika/react-dom' }
-    //   ]
-    // }),
     json(),
     image(),
     commonjs(),

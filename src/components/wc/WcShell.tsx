@@ -1,5 +1,5 @@
 import ReactComponent, { ReactComponentProps } from '../ReactComponent';
-import { ReactWcElement } from '../wc/ReactWcElement';
+import { ReactWcElement } from './ReactWcElement';
 import { CacheProvider } from '@emotion/react';
 import createCache, { EmotionCache } from '@emotion/cache';
 import { ConfigProvider } from 'antd';

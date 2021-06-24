@@ -1,6 +1,6 @@
-import { ReactComponentProps } from './ReactComponent';
-import WcShell from './entry/WcShell';
-import { withReactWrapper } from './wc/withReactWrapper';
+import { ReactComponentProps } from '../ReactComponent';
+import WcShell from './WcShell';
+import { withReactWrapper } from './withReactWrapper';
 
 const elName = 'vite-react-webcomponents';
 !customElements.get(elName) && customElements.define(elName, WcShell);

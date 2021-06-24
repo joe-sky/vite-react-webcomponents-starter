@@ -3,6 +3,7 @@ export default (hasStyle = false) => ({
   presets: [['@babel/typescript', { allowNamespaces: true }], '@babel/preset-react'],
   plugins: [
     ['import', { libraryName: 'antd', libraryDirectory: 'es', style: hasStyle }],
+    'jsx-sfc',
     [
       '@babel/plugin-proposal-decorators',
       {
