@@ -1,5 +1,8 @@
 {
-  "presets": [["@babel/typescript", { "allowNamespaces": true }], "@babel/preset-react"],
+  "presets": [
+    ["@babel/typescript", { "allowNamespaces": true }],
+    ["@babel/preset-react", { "runtime": "automatic" }]
+  ],
   "plugins": [
     [
       "@babel/plugin-proposal-decorators",

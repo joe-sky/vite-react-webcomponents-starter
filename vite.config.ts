@@ -11,7 +11,7 @@ const isProduction = env === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [jsxSfc(), reactRefresh(), reactJsx(), Checker({ typescript: true })],
+  plugins: [jsxSfc(), reactRefresh(), reactJsx(), !isProduction && Checker({ typescript: true })],
   define: {
     'process.env.NODE_ENV': JSON.stringify(env)
   },
