@@ -1977,10 +1977,10 @@ babel-plugin-import@^1.13.1:
     "@babel/helper-module-imports" "^7.0.0"
     "@babel/runtime" "^7.0.0"
 
-babel-plugin-jsx-sfc@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-sfc/-/babel-plugin-jsx-sfc-1.4.0.tgz#29751c54f0174cba0d91e38cec46f16ed1c95cd0"
-  integrity sha512-ESllCd3DFUdpPVdzD7fvcoQ2ST8Cay+omK/4t6KkSLp6UwGGtxvSPnL2737MP+ei5/flaAWmPb1bkFhEgsqvXg==
+babel-plugin-jsx-sfc@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/babel-plugin-jsx-sfc/-/babel-plugin-jsx-sfc-1.4.2.tgz#54e1be356006e2c17a7842a318c004eb491035f9"
+  integrity sha512-wWKYEZsxLvToCrBc+vNbZziSTFOoGb+0X4UcY4bYanLMpypwTlW7RZgENH2cRR4v14Hy7cJ000sljmSRF3SN9g==
   dependencies:
     "@babel/core" "^7.7.5"
     "@babel/plugin-transform-react-jsx" "^7.7.5"
@@ -4114,10 +4114,10 @@ jsonfile@^4.0.0:
     array-includes "^3.1.2"
     object.assign "^4.1.2"
 
-jsx-sfc@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/jsx-sfc/-/jsx-sfc-1.4.0.tgz#82c743ae1a01b97d7a48468947ccc7e7501448b8"
-  integrity sha512-aEkK8jQracmkMTMvIRTb7kI1swaJd+24gy7sbdmYYhDTvxI8sJIk3FLlKzEpVO0ght8RqrXsHl9Yc4mnrQQZ/A==
+jsx-sfc@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/jsx-sfc/-/jsx-sfc-1.4.2.tgz#32678dde33549f815c36e727d15ee99179037ffe"
+  integrity sha512-PHWQePCmmADy7bLJ3ptqfNSf78dyqgMbcFzVSexdBfF0wLQpKLj22hpfDDBUJp12/YFV0g8BIKPrT/EwaZMlKA==
 
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
@@ -7062,12 +7062,12 @@ vite-plugin-checker@^0.1.0:
     tiny-invariant "^1.1.0"
     vscode-languageclient "^7.0.0"
 
-vite-plugin-jsx-sfc@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/vite-plugin-jsx-sfc/-/vite-plugin-jsx-sfc-1.4.0.tgz#32a7017d1f9268df988d1d3b6df8ffda42be3e19"
-  integrity sha512-3GCDsA/zM9fKsv9uBgHcbfBonuTZaa/RS98f3VcZbWahmWhBFLLMltimht5W/PooM5CG6bEf1xgCG03uUEkuMA==
+vite-plugin-jsx-sfc@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-jsx-sfc/-/vite-plugin-jsx-sfc-1.4.2.tgz#fbc99175592d683b70468fad7d09032882392648"
+  integrity sha512-TpA0Eq4LvyqK7lY9g2/M/WlTcISM3SmxWbzEiu1ACW2HhXPxmDxigirB7u2FmJJyNxCDNwZP/x6z8tXaLwGzsA==
   dependencies:
-    babel-plugin-jsx-sfc "^1.4.0"
+    babel-plugin-jsx-sfc "^1.4.2"
 
 vite-react-jsx@^1.1.1:
   version "1.1.1"

@@ -49,7 +49,7 @@ const ReactComponent = sfc<ReactComponentProps>()({
     };
   },
 
-  options: {
+  static: {
     defaultProps: {
       titleText: 'Vite + React!',
       content: (
