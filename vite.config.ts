@@ -11,7 +11,7 @@ const isProduction = env === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [jsxSfc(), reactRefresh(), reactJsx(), !isProduction && Checker({ typescript: true })],
+  plugins: [jsxSfc(), reactRefresh(), !isProduction && reactJsx(), !isProduction && Checker({ typescript: true })],
   define: {
     'process.env.NODE_ENV': JSON.stringify(env)
   },
@@ -19,6 +19,9 @@ export default defineConfig({
     rollupOptions: {
       plugins: [isProduction && babel(babelConfig())]
     }
+  },
+  esbuild: isProduction && {
+    jsxInject: `import React from 'react'`
   },
   css: {
     preprocessorOptions: {
