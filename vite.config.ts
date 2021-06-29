@@ -20,9 +20,11 @@ export default defineConfig({
       plugins: [isProduction && babel(babelConfig())]
     }
   },
-  esbuild: isProduction && {
-    jsxInject: `import React from 'react'`
-  },
+  esbuild: isProduction
+    ? {
+        jsxInject: `import React from 'react'`
+      }
+    : {},
   css: {
     preprocessorOptions: {
       less: {

@@ -1,8 +1,8 @@
-import { forwardRef, ForwardRefRenderFunction, FC } from 'react';
+import { forwardRef } from 'react';
 import WcShell from './vite-react-webcomponents.js';
 
 export function withReactWrapper<ElementType extends HTMLElement, PropsType>(TagName: any) {
-  const ReactComponent: ForwardRefRenderFunction<{}, PropsType> = (props, ref) => {
+  const ReactComponent: React.ForwardRefRenderFunction<{}, PropsType> = (props, ref) => {
     const { children } = props;
 
     return (
@@ -28,7 +28,7 @@ export function withReactWrapper<ElementType extends HTMLElement, PropsType>(Tag
 
   ReactComponent.displayName = TagName;
 
-  return (forwardRef ? forwardRef(ReactComponent) : ReactComponent) as FC<PropsType>;
+  return (forwardRef ? forwardRef(ReactComponent) : ReactComponent) as React.FC<PropsType>;
 }
 
 customElements.define('vite-react-webcomponents', WcShell);
