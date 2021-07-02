@@ -6,7 +6,6 @@ export default (hasStyle = false) => ({
   ],
   plugins: [
     ['import', { libraryName: 'antd', libraryDirectory: 'es', style: hasStyle }],
-    'jsx-sfc',
     [
       '@babel/plugin-proposal-decorators',
       {
