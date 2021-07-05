@@ -2,6 +2,7 @@ import dts from 'rollup-plugin-dts';
 import license from 'rollup-plugin-license';
 import alias from '@rollup/plugin-alias';
 import ignoreImport from 'rollup-plugin-ignore-import';
+const { libBanner } = require('./configs');
 
 const config = {
   input: './src/components/entry/dts.ts',
@@ -15,10 +16,7 @@ const config = {
     }),
     dts(),
     license({
-      banner: `/*!
- * @joe-sky/vite-react-webcomponents v${require('../package/package.json').version}
- * (c) Joe_Sky
- */`
+      banner: libBanner
     })
   ]
 };

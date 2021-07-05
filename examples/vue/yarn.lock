@@ -20,10 +20,10 @@
     "@babel/helper-validator-identifier" "^7.14.0"
     to-fast-properties "^2.0.0"
 
-"@joe-sky/vite-react-webcomponents@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@joe-sky/vite-react-webcomponents/-/vite-react-webcomponents-0.0.5.tgz#a2ae4b07e132ce3ef0400b323469a8143dc89d53"
-  integrity sha512-1nPRp2F5V9gHqIzHiZoxDeoo3tlJB1U+MZ4h6pIpBffg8gXIWBg/pct2zuN6Xs2gPaTAxosdHIvNw3rsw7aw4g==
+"@joe-sky/vite-react-webcomponents@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@joe-sky/vite-react-webcomponents/-/vite-react-webcomponents-0.0.6.tgz#cc4a34b8566a2660f24c436524cae045377503ed"
+  integrity sha512-LrMlkYlLUWF7zVd5mIeH/bKmkh600xZVzrG9PkRGX3eRLrcoHIHf3++V231oX6G31SDDjatXJwrjtZRget0gJg==
 
 "@vitejs/plugin-vue@^1.2.2":
   version "1.2.2"

@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import WcShell from './vite-react-webcomponents.js';
 
 export function withReactWrapper<ElementType extends HTMLElement, PropsType>(TagName: any) {
@@ -31,5 +31,6 @@ export function withReactWrapper<ElementType extends HTMLElement, PropsType>(Tag
   return (forwardRef ? forwardRef(ReactComponent) : ReactComponent) as React.FC<PropsType>;
 }
 
-customElements.define('vite-react-webcomponents', WcShell);
-export default withReactWrapper('vite-react-webcomponents');
+const elName = COMPONENT_NAME;
+customElements.define(elName, WcShell);
+export default withReactWrapper(elName);

@@ -1,14 +1,29 @@
 {
   "name": "@joe-sky/vite-react-webcomponents",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "The vite starter for create react components with web components shell.",
   "main": "cjs/index.js",
   "module": "es/index.js",
   "types": "types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./es/index.js",
+      "require": "./cjs/index.js",
+      "node": "./cjs/index.js",
+      "default": "./es/index.js"
+    },
+    "./vue": {
+      "import": "./es/vue.js",
+      "require": "./cjs/vue.js",
+      "node": "./cjs/vue.js",
+      "default": "./es/vue.js"
+    }
+  },
   "files": [
     "cjs/",
     "es/",
     "types/",
+    "vue/",
     "README.md"
   ],
   "author": "Joe_Sky",

@@ -6,7 +6,7 @@
     "build": "vite build"
   },
   "dependencies": {
-    "@joe-sky/vite-react-webcomponents": "^0.0.5",
+    "@joe-sky/vite-react-webcomponents": "^0.0.6",
     "vue": "^3.0.2"
   },
   "devDependencies": {

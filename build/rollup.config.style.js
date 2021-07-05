@@ -6,6 +6,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import json from '@rollup/plugin-json';
 import image from '@rollup/plugin-image';
 import babelConfig from './babel.config';
+const { libBanner } = require('./configs');
 
 const config = {
   input: './src/components/ReactComponent.tsx',
@@ -32,10 +33,7 @@ const config = {
       minimize: true
     }),
     license({
-      banner: `/*!
- * @joe-sky/vite-react-webcomponents v${require('../style/package.json').version}
- * (c) Joe_Sky
- */`
+      banner: libBanner
     })
   ]
 };

@@ -5,7 +5,6 @@ node_modules
 package/cjs
 package/es
 package/types
-/package/vue
 /build/packages-analyze.txt
 /style/useless.js
 /style/styles.css

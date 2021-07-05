@@ -12,6 +12,7 @@ import postcss from 'rollup-plugin-postcss';
 import analyze from 'rollup-plugin-analyzer';
 import fs from 'fs';
 import babelConfig from './babel.config';
+const { componentName, libBanner } = require('./configs');
 
 const env = process.env.NODE_ENV;
 const format = process.env.FORMAT;
@@ -37,7 +38,8 @@ const config = {
       extensions: ['.js', '.jsx', '.ts', '.tsx']
     }),
     replace({
-      'process.env.NODE_ENV': JSON.stringify(env)
+      'process.env.NODE_ENV': JSON.stringify(env),
+      COMPONENT_NAME: JSON.stringify(componentName)
     }),
     terser(),
     // analyze({
@@ -51,10 +53,7 @@ const config = {
     //   }
     // }),
     license({
-      banner: `/*!
- * @joe-sky/vite-react-webcomponents v${require('../package/package.json').version}
- * (c) Joe_Sky
- */`
+      banner: libBanner
     })
   ]
 };

@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom';
-import './styles/app.less';
 import App from './App';
 
 function renderApp() {

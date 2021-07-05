@@ -17,8 +17,8 @@ function App() {
             <Input style={{ marginLeft: 30 }} value={titleText} onChange={e => setTitleText(e.target.value)} />
           </>
         }>
-        <ViteReactWebcomponents userName="Joe_Sky" titleText={titleText} height="100%">
-          Try modifying the textbox at the top
+        <ViteReactWebcomponents userName="Joe_Sky" titleText={<b>{titleText}</b>} height="100%">
+          <i>Try modifying the textbox at the top</i>
         </ViteReactWebcomponents>
       </Card>
     </div>

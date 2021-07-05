@@ -13,4 +13,6 @@ declare global {
       MODE: string;
     };
   }
+
+  const COMPONENT_NAME: string;
 }

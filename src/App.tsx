@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import ViteReactWebcomponents from './components/wc/DevWcShell';
-import './styles/app.less';
+import { Global } from '@emotion/react';
 import { Input } from 'antd';
+import ViteReactWebcomponents from './components/wc/DevWcShell';
+import { globalStyles } from './styles/app';
 
 function App() {
   const [titleText, setTitleText] = useState('Vite + React + Web Components!');
@@ -13,8 +14,9 @@ function App() {
 
   return (
     <div className="App">
+      <Global styles={globalStyles} />
       <ViteReactWebcomponents titleText={titleText} content={content}>
-        Try modifying the textbox at the bottom of screen
+        <i>Try modifying the textbox at the bottom of screen</i>
       </ViteReactWebcomponents>
       <Input
         value={titleText}

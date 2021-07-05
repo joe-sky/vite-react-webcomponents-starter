@@ -8,19 +8,20 @@
     text:
     <input v-model="titleText" />
     <vite-react-webcomponents userName="Joe_Sky" :titleText="titleText" :height="height">
-      Try modifying the textbox at the top
+      <i>Try modifying the textbox at the top</i>
     </vite-react-webcomponents>
   </div>
 </template>
 
 <script>
-import '@joe-sky/vite-react-webcomponents/es/vue';
+import { h } from 'vue';
+import '@joe-sky/vite-react-webcomponents/vue';
 
 export default {
   name: 'App',
   data: () => ({
     height: '600px',
-    titleText: 'ViteReactWebcomponents example with Vue v3!'
+    titleText: ['ViteReactWebcomponents', ' example with Vue v3!']
   })
 };
 </script>

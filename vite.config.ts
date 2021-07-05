@@ -4,6 +4,7 @@ import babel from '@rollup/plugin-babel';
 import babelConfig from './build/babel.config';
 import reactJsx from 'vite-react-jsx';
 import Checker from 'vite-plugin-checker';
+import { componentName } from './build/configs';
 
 const env = process.env.NODE_ENV;
 const isProduction = env === 'production';
@@ -12,7 +13,8 @@ const isProduction = env === 'production';
 export default defineConfig({
   plugins: [reactRefresh(), !isProduction && reactJsx(), !isProduction && Checker({ typescript: true })],
   define: {
-    'process.env.NODE_ENV': JSON.stringify(env)
+    'process.env.NODE_ENV': JSON.stringify(env),
+    COMPONENT_NAME: JSON.stringify(componentName)
   },
   build: {
     rollupOptions: {

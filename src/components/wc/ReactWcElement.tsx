@@ -32,7 +32,7 @@ export abstract class ReactWcElement extends HTMLElement {
         for (; this.attributes.length > 0; ) {
           this.attributes.removeNamedItem(this.attributes[0].name);
         }
-        this.$update();
+        this.update();
       }
     });
     this.observer.observe(this, { attributes: true });
@@ -58,7 +58,7 @@ export abstract class ReactWcElement extends HTMLElement {
   }
 
   public connectedCallback() {
-    this.$update();
+    this.update();
     this.connected = true;
   }
 
@@ -68,7 +68,7 @@ export abstract class ReactWcElement extends HTMLElement {
     this.observer.disconnect();
   }
 
-  public $update() {
+  public update() {
     requestAnimationFrame(() => {
       render(this.render(), this.rootNode);
       this.rendering = false;
