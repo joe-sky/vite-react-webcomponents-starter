@@ -15,7 +15,7 @@ export abstract class ReactWcElement extends HTMLElement {
     this.shadowRoot.appendChild(this.rootNode);
   };
 
-  public data: any;
+  public data: Record<string, any>;
 
   public abstract render: () => ReactElement<any>;
 

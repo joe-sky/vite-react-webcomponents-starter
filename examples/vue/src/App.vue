@@ -14,7 +14,6 @@
 </template>
 
 <script>
-import { h } from 'vue';
 import '@joe-sky/vite-react-webcomponents/vue';
 
 export default {
