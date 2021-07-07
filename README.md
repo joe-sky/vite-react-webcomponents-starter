@@ -17,8 +17,6 @@
 - Good performance, multiple attribute changes will not appear repeated rendering
 - Provide examples running in react and Vue
 
-## Motivation
-
 ## Preset tools and libraries
 
 - [Vite](https://github.com/vitejs/vite)
@@ -27,6 +25,38 @@
 - [Emotion](https://github.com/emotion-js/emotion)
 - [Mobx(optional)](https://mobx.js.org/)
 - [Ant Design(optional)](https://ant.design/)
+
+## Motivation
+
+This project can help you fully use React to develop cross framework web components. It using the isolation feature of shadow DOM to implement the coexistence of different versions of React, and using it in other frameworks such as Vue.
+
+### Why use React to develop web components
+
+Of course, the current using libraries like Lit can be very good to develop regular web components. But at the same time, you may also need to think about the following problems:
+
+- React has a lot of high quality component libraries, but Lit has less ecology than React.
+
+- Regular web components don't support passing non-string parameters, sometimes we have to use `JSON.stringify` manually.
+
+- Even if you are familiar with React, you still have to learn Lit in order to develop web components.
+
+However, in the official document of React, there is very little [content about web components](https://reactjs.org/docs/web-components.html#using-react-in-your-web-components), and only a very simple scenario is given. for example, the following points are not mentioned:
+
+- When updating the properties of web components, how to update the internal React components.
+
+- How to pass child nodes to internal React components.
+
+- How to pass non string parameters to internal React components.
+
+- How to render styles.
+
+### Solution in this boilerplate
+
+For the above problems, this boilerplate has given the corresponding solutions, and preset the corresponding packaging configuration to support direct packaging as available web components embedded with React components.
+
+## Similar implementation
+
+- [react-webcomponentify](https://github.com/a7ul/react-webcomponentify)
 
 ## Getting started
 
