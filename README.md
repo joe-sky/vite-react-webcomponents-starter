@@ -52,7 +52,7 @@ However, in the official document of React, there is very little [content about 
 
 ### Solution in this boilerplate
 
-For the above problems, this boilerplate has given the corresponding solutions, and preset the corresponding packaging configuration to support direct packaging as available web components embedded with React components.
+For the above problems, this boilerplate has given the solutions, and preset the configuration to support direct packaging as web components embedded with React components.
 
 ## Similar implementation
 
@@ -79,19 +79,27 @@ npm run dev
 
 Open http://localhost:3000 with your favorite browser to see your project.
 
-<!-- ```bash
+```bash
 .
-├── README.md                # README file
-├── next.config.js           # Next JS configuration
-├── public                   # Public folder
-│   └── assets
-│       └── images           # Image used by default template
+├── build
+│   ├── rollup.config.dts.js    # Rollup configuration for generate d.ts
+│   ├── rollup.config.style.js  # Rollup configuration for extract css
+│   └── rollup.config.js        # Rollup configuration for build package
+├── package                     # Packaged production component code
+├── examples
+│   ├── react                   # Example which using packaged components in React(v16)
+│   └── vue                     # Example which using packaged components in Vue(v3)
+├── public
+│   └── .nojekyll               # Solve the problem when deploying the vite project to github pages
 ├── src
-│   ├── layout               # Atomic layout components
-│   ├── pages                # Next JS pages
-│   ├── styles               # PostCSS style folder with Tailwind
-│   ├── templates            # Default template
-│   └── utils                # Utility folder
-├── tailwind.config.js       # Tailwind CSS configuration
-└── tsconfig.json            # TypeScript configuration
-``` -->
+│   ├── assets                  # Static resources such as images and SVG
+│   ├── components
+│       ├── wc                  # Web component shell code
+│       └── ReactComponent.tsx  # React top level component
+│   ├── styles                  # Global style code
+│   ├── types                   # TS interface and type
+│   └── utils                   # Utility folder
+├── index.html                  # Development test page
+├── vite.config.ts              # Vite configuration
+└── tsconfig.json               # TypeScript configuration
+```
