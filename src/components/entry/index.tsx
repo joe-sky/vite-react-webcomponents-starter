@@ -32,5 +32,5 @@ export function withReactWrapper<ElementType extends HTMLElement, PropsType>(Tag
 }
 
 const elName = COMPONENT_NAME;
-customElements.define(elName, WcShell);
+!customElements.get(elName) && customElements.define(elName, WcShell);
 export default withReactWrapper(elName);

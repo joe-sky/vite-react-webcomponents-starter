@@ -24,7 +24,9 @@ export abstract class ReactWcElement extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: 'open' });
-    this.createRoot();
+    requestAnimationFrame(() => {
+      this.createRoot();
+    });
 
     this.observer = new MutationObserver(() => {
       if (this.connected && !this.rendering && this.attributes.length) {
