@@ -12,7 +12,7 @@ export abstract class ReactWcElement extends HTMLElement {
   protected createRoot = () => {
     this.rootNode = document.createElement('div');
     this.rootNode.id = 'root';
-    this.shadowRoot.appendChild(this.rootNode);
+    this.shadowRoot?.appendChild(this.rootNode);
   };
 
   public data: Record<string, any>;

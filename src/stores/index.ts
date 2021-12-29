@@ -1,8 +1,15 @@
-import React from 'react';
-import store from './store';
+import { createContext, useContext } from 'react';
+import { makeAutoObservable, observable, computed, toJS } from 'mobx';
+import Common from './common';
 
-export const StoreContext = React.createContext(store);
+export class Store {
+  common = new Common();
 
-export const useStore = () => React.useContext(StoreContext);
+  constructor() {
+    makeAutoObservable(this);
+  }
+}
 
-export default store;
+export const StoreContext = createContext({} as Store);
+
+export const useStore = () => useContext(StoreContext);

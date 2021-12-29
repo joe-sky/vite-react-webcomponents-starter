@@ -4,13 +4,13 @@ import { CacheProvider } from '@emotion/react';
 import createCache, { EmotionCache } from '@emotion/cache';
 import { ConfigProvider } from 'antd';
 import { as } from '../../utils';
-import rootStore, { StoreContext } from '../../stores';
+import { Store, StoreContext } from '../../stores';
 import styles from '../../../style/styles.css';
 
 const { defaultProps } = ReactComponent;
 
 export default class WcShell extends ReactWcElement {
-  public data: ReactComponentProps = defaultProps;
+  public data = defaultProps as ReactComponentProps;
   private emotionCache: EmotionCache;
 
   constructor() {
@@ -26,7 +26,7 @@ export default class WcShell extends ReactWcElement {
     return (
       <CacheProvider value={this.emotionCache}>
         <ConfigProvider getPopupContainer={triggerNode => as(this.shadowRoot)}>
-          <StoreContext.Provider value={rootStore}>
+          <StoreContext.Provider value={new Store()}>
             <style>{styles}</style>
             <ReactComponent {...this.data} />
           </StoreContext.Provider>

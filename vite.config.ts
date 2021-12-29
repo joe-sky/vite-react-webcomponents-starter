@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 import babel from '@rollup/plugin-babel';
 import babelConfig from './build/babel.config';
-import reactJsx from 'vite-react-jsx';
 import Checker from 'vite-plugin-checker';
 import { componentName } from './build/configs';
 
@@ -11,7 +10,7 @@ const isProduction = env === 'production';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [reactRefresh(), !isProduction && reactJsx(), !isProduction && Checker({ typescript: true })],
+  plugins: [react(), !isProduction && Checker({ typescript: true })],
   define: {
     'process.env.NODE_ENV': JSON.stringify(env),
     COMPONENT_NAME: JSON.stringify(componentName)

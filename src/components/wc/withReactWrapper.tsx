@@ -1,7 +1,9 @@
 import { forwardRef } from 'react';
 import { ReactWcElement } from './ReactWcElement';
 
-export function withReactWrapper<ElementType extends ReactWcElement, PropsType>(TagName: any) {
+export function withReactWrapper<ElementType extends ReactWcElement, PropsType extends Record<string, any>>(
+  TagName: any
+) {
   const ReactComponent: React.ForwardRefRenderFunction<{}, PropsType> = (props, ref) => {
     const { children } = props;
 

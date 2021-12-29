@@ -12,7 +12,8 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitThis": true,
-    "strict": true
+    "strict": true,
+    "strictPropertyInitialization": false
   },
   "include": ["src", "types"],
   "exclude": ["src/components/entry/index.tsx", "src/components/entry/vue.ts"]
