@@ -3,7 +3,7 @@ import { makeAutoObservable, observable, computed, toJS } from 'mobx';
 import Common from './common';
 
 export class Store {
-  common = new Common();
+  common = new Common(this);
 
   constructor() {
     makeAutoObservable(this);

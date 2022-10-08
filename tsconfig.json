@@ -8,12 +8,17 @@
     "outDir": "./built",
     "baseUrl": ".",
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
     "allowJs": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitThis": true,
     "strict": true,
-    "strictPropertyInitialization": false
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "resolveJsonModule": true
   },
   "include": ["src", "types"],
   "exclude": ["src/components/entry/index.tsx", "src/components/entry/vue.ts"]

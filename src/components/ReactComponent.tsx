@@ -11,6 +11,7 @@ export interface ReactComponentProps {
   content?: ReactNode;
   height?: number | string;
   userName?: string;
+  children?: ReactNode;
 }
 
 const ReactComponent: React.FC<ReactComponentProps> = props => {

@@ -12,6 +12,7 @@ const { defaultProps } = ReactComponent;
 export default class WcShell extends ReactWcElement {
   public data = defaultProps as ReactComponentProps;
   private emotionCache: EmotionCache;
+  private store = new Store();
 
   constructor() {
     super();
@@ -26,7 +27,7 @@ export default class WcShell extends ReactWcElement {
     return (
       <CacheProvider value={this.emotionCache}>
         <ConfigProvider getPopupContainer={triggerNode => as(this.shadowRoot)}>
-          <StoreContext.Provider value={new Store()}>
+          <StoreContext.Provider value={this.store}>
             <style>{styles}</style>
             <ReactComponent {...this.data} />
           </StoreContext.Provider>
